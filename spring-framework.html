@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring Framework Roadmap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4fffb;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c6e49;
+    }
+
+    .section {
+      margin: 20px 0;
+      border: 2px solid #a7d7c5;
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+
+    .section-header {
+      background-color: #d9f8eb;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .content {
+      display: none;
+      padding: 15px;
+    }
+
+    .topic {
+      margin-bottom: 20px;
+    }
+
+    .topic strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #27563f;
+    }
+
+    .sub-topic {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px 0;
+      padding: 8px 10px;
+      background-color: #f0fdf7;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #45b48c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button.completed {
+      background-color: #6c757d;
+      text-decoration: line-through;
+    }
+
+    a {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+      font-weight: bold;
+      color: #2c6e49;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌱 Spring Framework (Core) Roadmap</h1>
+
+<div class="section">
+  <div class="section-header" onclick="toggleContent(this)">5. Spring Framework (Core)</div>
+  <div class="content">
+    <div class="topic">
+      <strong>Introduction</strong>
+      <div class="sub-topic"><span>What is Spring Framework</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>Need for Spring (IoC & DI)</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+    </div>
+
+    <div class="topic">
+      <strong>Core Concepts</strong>
+      <div class="sub-topic"><span>Inversion of Control (IoC)</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>Dependency Injection (Constructor, Setter)</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>Spring Beans and Lifecycle</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>Bean Scopes: Singleton, Prototype</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+    </div>
+
+    <div class="topic">
+      <strong>Annotations</strong>
+      <div class="sub-topic"><span>@Component, @Service, @Repository</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>@Autowired, @Qualifier, @Primary</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>@Configuration, @Bean</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>@PostConstruct, @PreDestroy</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+    </div>
+
+    <div class="topic">
+      <strong>Spring Container</strong>
+      <div class="sub-topic"><span>BeanFactory vs ApplicationContext</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>AnnotationConfigApplicationContext</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+    </div>
+
+    <div class="topic">
+      <strong>AOP (Aspect Oriented Programming)</strong>
+      <div class="sub-topic"><span>What is AOP & Cross-cutting concerns</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>@Aspect, @Before, @After, @Around</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+    </div>
+
+    <div class="topic">
+      <strong>JDBC & Transactions</strong>
+      <div class="sub-topic"><span>JdbcTemplate for DB Access</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>@Transactional for TX Management</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+    </div>
+  </div>
+</div>
+
+<a href="index.html">⬅️ Back to Home</a>
+
+<script>
+  function toggleContent(element) {
+    const content = element.nextElementSibling;
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  }
+
+  function markComplete(btn) {
+    if (btn.classList.contains('completed')) {
+      btn.classList.remove('completed');
+      btn.textContent = 'Mark as Complete';
+    } else {
+      btn.classList.add('completed');
+      btn.textContent = 'Completed ✅';
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Development - Full Learning Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      margin: 20px auto;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      max-width: 1000px;
+    }
+
+    .section-header {
+      background: #1abc9c;
+      color: #fff;
+      padding: 18px 24px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .section-header:hover {
+      background: #16a085;
+    }
+
+    .content {
+      display: none;
+      padding: 20px 30px;
+    }
+
+    .topic {
+      margin-bottom: 24px;
+    }
+
+    .topic strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #34495e;
+    }
+
+    .sub-topic {
+      background: #ecf0f1;
+      margin: 6px 0;
+      padding: 12px 18px;
+      border-left: 5px solid #1abc9c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .sub-topic:hover {
+      background: #ddeeee;
+    }
+
+    .sub-topic span {
+      flex: 1;
+      font-size: 16px;
+    }
+
+    .completed {
+      background-color: #dff0d8 !important;
+      color: #2d862d;
+      text-decoration: line-through;
+    }
+
+    button {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #27ae60;
+    }
+    a {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+      font-weight: bold;
+      color: #2c6e49;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Website Development Learning Path</h1>
+
+  <!-- Core Java -->
+  <div class="section">
+    <div class="section-header" onclick="toggleContent(this)">1. Core Java</div>
+    <div class="content">
+      <div class="topic">
+        <strong>Java Basics</strong>
+        <div class="sub-topic"><span>Data Types, Variables, Operators</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Control Flow: if, switch, loops</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Arrays</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+      <div class="topic">
+        <strong>OOPs Concepts</strong>
+        <div class="sub-topic"><span>Classes and Objects</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Inheritance</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Polymorphism (Overloading/Overriding)</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Encapsulation</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Abstraction (Abstract Class & Interface)</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+      <div class="topic">
+        <strong>Exception Handling</strong>
+        <div class="sub-topic"><span>try-catch-finally</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>throw, throws</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Custom Exceptions</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+      <div class="topic">
+        <strong>Collections Framework</strong>
+        <div class="sub-topic"><span>List, Set, Map Overview</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>ArrayList, LinkedList</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>HashSet, TreeSet</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>HashMap, TreeMap</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+      <div class="topic">
+        <strong>Java I/O</strong>
+        <div class="sub-topic"><span>FileReader, FileWriter</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>BufferedReader, BufferedWriter</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Object Streams</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+      <div class="topic">
+        <strong>Multithreading</strong>
+        <div class="sub-topic"><span>Thread Class vs Runnable</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Synchronized Keyword</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Thread Lifecycle</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+      <div class="topic">
+        <strong>JDBC</strong>
+        <div class="sub-topic"><span>DriverManager, Connection</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Statement, PreparedStatement</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>ResultSet & SQL Queries</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Servlet & JSP -->
+  <div class="section">
+    <div class="section-header" onclick="toggleContent(this)">2. Servlet & JSP</div>
+    <div class="content">
+      <div class="topic">
+        <strong>Servlet</strong>
+        <div class="sub-topic"><span>Introduction to Servlet</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Servlet Lifecycle</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>doGet vs doPost</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>web.xml Configuration</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>HttpServletRequest & Response</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Session Tracking Techniques</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+      <div class="topic">
+        <strong>JSP</strong>
+        <div class="sub-topic"><span>JSP Basics & Tags</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Scriptlets, Declarations, Expressions</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Directives and Page Settings</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>Implicit Objects</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+        <div class="sub-topic"><span>JSTL & EL</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frontend -->
+  <div class="section">
+    <div class="section-header" onclick="toggleContent(this)">3. Frontend (HTML, CSS, JS)</div>
+    <div class="content">
+      <div class="sub-topic"><span>HTML Structure and Forms</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>CSS Styling and Layout (Flexbox/Grid)</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>JavaScript Basics and DOM Manipulation</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>AJAX and Fetch API</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+    </div>
+  </div>
+
+  <!-- Tools & Server Setup -->
+  <div class="section">
+    <div class="section-header" onclick="toggleContent(this)">4. Server & Tools</div>
+    <div class="content">
+      <div class="sub-topic"><span>Apache Tomcat Installation and Usage</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>Deploying WAR Files</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>Postman API Testing</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>MongoDB Setup and Java Integration</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+      <div class="sub-topic"><span>MySQL Setup and Java Integration</span> <button onclick="markComplete(this)">Mark as Complete</button></div>
+    </div>
+  </div>
+
+<a href="index.html">⬅️ Back to Home</a>
+
+<script>
+  function toggleContent(header) {
+    const content = header.nextElementSibling;
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  }
+
+  function markComplete(btn) {
+    const topic = btn.parentElement;
+    topic.classList.toggle("completed");
+    btn.textContent = topic.classList.contains("completed") ? "Undo" : "Mark as Complete";
+  }
+</script>
+
+</body>
+</html>

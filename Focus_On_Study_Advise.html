@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>7-Day Brain Interest Activation Plan</title>
+  <style>
+    :root{
+      --bg:#0f172a;          /* slate-900 */
+      --card:#111827;        /* gray-900 */
+      --muted:#94a3b8;       /* slate-400 */
+      --text:#e5e7eb;        /* gray-200 */
+      --accent:#22c55e;      /* green-500 */
+      --accent-2:#3b82f6;    /* blue-500 */
+      --warning:#f59e0b;     /* amber-500 */
+      --danger:#ef4444;      /* red-500 */
+      --border:#1f2937;      /* gray-800 */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background:linear-gradient(120deg,#111827,#0b1224 60%,#070f1e);
+      color:var(--text);
+    }
+    .wrapper{max-width:1200px;margin:32px auto;padding:0 16px}
+    .header{
+      display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:16px
+    }
+    h1{font-size:clamp(22px,3.5vw,34px);margin:0;letter-spacing:0.3px}
+    .controls{display:flex;flex-wrap:wrap;gap:10px}
+    button, .chip{
+      background:var(--card);color:var(--text);border:1px solid var(--border);
+      padding:10px 14px;border-radius:14px;cursor:pointer;transition:transform .04s ease, background .2s ease, border-color .2s ease;
+      font-weight:600; letter-spacing:.2px
+    }
+    button:hover{transform:translateY(-1px);}
+    .chip{font-size:13px}
+    .chip input{margin-right:8px}
+    .table-card{
+      background:rgba(17,24,39,.6);
+      border:1px solid var(--border);
+      border-radius:18px;overflow:hidden;backdrop-filter: blur(6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
+    table{width:100%;border-collapse:collapse}
+    thead{position:sticky;top:0;background:rgba(2,6,23,.9);backdrop-filter: blur(6px);z-index:2}
+    th, td{padding:14px 16px;vertical-align:top;border-bottom:1px solid var(--border)}
+    th{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-align:left}
+    tbody tr:nth-child(odd){background:rgba(255,255,255,.02)}
+    .day{font-weight:800;font-size:18px}
+    .col-small{width:150px}
+    .checkgroup{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .checkgroup label{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.03);padding:6px 10px;border:1px solid var(--border);border-radius:10px;font-size:12px}
+    input[type="checkbox"]{accent-color:var(--accent)}
+    .footer-note{color:var(--muted);font-size:12px;margin-top:8px}
+    .success{color:var(--accent)}
+    .muted{color:var(--muted)}
+
+    @media (max-width: 860px){
+      .hide-sm{display:none}
+      th, td{padding:12px}
+    }
+
+    /* Print styles */
+    @media print{
+      body{background:#fff;color:#000}
+      .controls{display:none}
+      .table-card{box-shadow:none}
+      thead{position:static;background:#fff}
+      th, td{border-color:#ddd}
+      a{color:#000}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>7‑Day Brain Interest Activation Plan</h1>
+      <div class="controls">
+        <button id="printBtn" title="Print or save as PDF">🖨️ Print / Save PDF</button>
+        <button id="clearBtn" title="Clear all checkmarks">♻️ Reset Progress</button>
+        <span class="chip"><input type="checkbox" id="compactToggle"/> Compact rows</span>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <table id="planTable" aria-describedby="table-desc">
+        <caption id="table-desc" class="footer-note" style="caption-side:bottom;padding:10px 16px;text-align:left">Check items as you complete them. Your progress is saved in this browser.</caption>
+        <thead>
+          <tr>
+            <th class="col-small">Day</th>
+            <th>Morning Routine</th>
+            <th>Study Method</th>
+            <th>Dopamine & Distraction Control</th>
+            <th class="hide-sm">Evening Mind Reset</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Day 1 -->
+          <tr>
+            <td class="day">Day 1</td>
+            <td>
+              🌅 Wake, hydrate, 5 min stretch, protein breakfast (eggs/nuts/sprouts).
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Water</label>
+                <label><input type="checkbox"/> Stretch</label>
+                <label><input type="checkbox"/> Protein</label>
+              </div>
+            </td>
+            <td>
+              📚 Pomodoro Light: 25 min study → 5 min reward. Choose 1 curious topic.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Session 1</label>
+                <label><input type="checkbox"/> Session 2</label>
+                <label><input type="checkbox"/> Reward</label>
+              </div>
+            </td>
+            <td>
+              📵 Phone in another room. Instrumental-only music.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Phone away</label>
+                <label><input type="checkbox"/> Focus music</label>
+              </div>
+            </td>
+            <td class="hide-sm">
+              🧘 5 min breathing. Write 3 wins.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Breathing</label>
+                <label><input type="checkbox"/> 3 wins</label>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Day 2 -->
+          <tr>
+            <td class="day">Day 2</td>
+            <td>
+              🌞 10 min sunlight walk. Tea/coffee (no sugar).
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Sun walk</label>
+                <label><input type="checkbox"/> Brew</label>
+              </div>
+            </td>
+            <td>
+              🎯 Split topic into 3 goals; finish one.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Goal 1</label>
+                <label><input type="checkbox"/> Goal 2</label>
+                <label><input type="checkbox"/> Goal 3</label>
+              </div>
+            </td>
+            <td>
+              ⏳ Delay social media until after 2 sessions.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> 2 sessions done</label>
+              </div>
+            </td>
+            <td class="hide-sm">
+              ✍️ Journal: learning + why it matters.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Journal</label>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Day 3 -->
+          <tr>
+            <td class="day">Day 3</td>
+            <td>
+              🧘 5 min future-self meditation. Protein + complex carbs (oats/banana).
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Meditate</label>
+                <label><input type="checkbox"/> Breakfast</label>
+              </div>
+            </td>
+            <td>
+              🧠 30 min study + Active Recall (explain aloud).
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Study</label>
+                <label><input type="checkbox"/> Recall</label>
+              </div>
+            </td>
+            <td>
+              🧹 Declutter desk; keep only study items visible.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Declutter</label>
+              </div>
+            </td>
+            <td class="hide-sm">
+              📖 Read 10 pages career-related.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Read</label>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Day 4 -->
+          <tr>
+            <td class="day">Day 4</td>
+            <td>
+              💧 Cold face splash + 15 min light exercise.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Cold splash</label>
+                <label><input type="checkbox"/> Exercise</label>
+              </div>
+            </td>
+            <td>
+              ⚡ Start with easiest task → build momentum to harder topics.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Easy task</label>
+                <label><input type="checkbox"/> Hard task</label>
+              </div>
+            </td>
+            <td>
+              🚫 Skip high-sugar snacks during study.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> No sugar</label>
+              </div>
+            </td>
+            <td class="hide-sm">
+              🎯 Visualize career success; feel the pride.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Visualize</label>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Day 5 -->
+          <tr>
+            <td class="day">Day 5</td>
+            <td>
+              🙏 Gratitude list (3). Hydrate well.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Gratitude</label>
+                <label><input type="checkbox"/> Hydrate</label>
+              </div>
+            </td>
+            <td>
+              🛠️ Practice: apply learning to a mini project/code snippet.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Practice</label>
+              </div>
+            </td>
+            <td>
+              📵 Mini digital detox: 2 hrs no phone (calls ok).
+              <div class="checkgroup">
+                <label><input type="checkbox"/> 2 hrs detox</label>
+              </div>
+            </td>
+            <td class="hide-sm">
+              🧘 10 min guided meditation for stress relief.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Meditate</label>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Day 6 -->
+          <tr>
+            <td class="day">Day 6</td>
+            <td>
+              🏃 5 min cardio (jumping jacks/skipping). Protein breakfast.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Cardio</label>
+                <label><input type="checkbox"/> Protein</label>
+              </div>
+            </td>
+            <td>
+              🔄 Mix 50% study + 50% practical application.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Study</label>
+                <label><input type="checkbox"/> Apply</label>
+              </div>
+            </td>
+            <td>
+              🎁 Reward stacking: after 3 study sessions, short favorite show/video.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> 3 sessions</label>
+                <label><input type="checkbox"/> Reward</label>
+              </div>
+            </td>
+            <td class="hide-sm">
+              📖 Reflect: skills vs distractions — what improved?
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Reflection</label>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Day 7 -->
+          <tr>
+            <td class="day">Day 7</td>
+            <td>
+              🌙 Prioritize deep sleep (dark room). Wake naturally.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Sleep hygiene</label>
+              </div>
+            </td>
+            <td>
+              🧾 Review all topics; mark weak areas.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Review</label>
+                <label><input type="checkbox"/> Weak spots</label>
+              </div>
+            </td>
+            <td>
+              🧽 Clean & reset study space for next week.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Reset space</label>
+              </div>
+            </td>
+            <td class="hide-sm">
+              📝 Weekly reflection: 5 sentences on growth & control.
+              <div class="checkgroup">
+                <label><input type="checkbox"/> Reflection</label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="footer-note">Tips: Study in the same spot daily, keep phone out of reach, sip water every 45 min, and avoid screens 30 min before bed.</p>
+  </div>
+
+  <a href="index.html">⬅️ Back to Home</a>
+
+  <script>
+    // --- Persistence with localStorage ---
+    const STORAGE_KEY = 'brain-plan-progress-v1';
+
+    function saveProgress(){
+      const states = Array.from(document.querySelectorAll('#planTable input[type="checkbox"]')).map(c=>c.checked?1:0);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(states));
+    }
+
+    function loadProgress(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return;
+        const states = JSON.parse(raw);
+        document.querySelectorAll('#planTable input[type="checkbox"]').forEach((c, i)=>{
+          if(states[i]!==undefined) c.checked = !!states[i];
+        });
+      }catch(e){ console.warn('Progress load failed', e); }
+    }
+
+    function clearProgress(){
+      document.querySelectorAll('#planTable input[type="checkbox"]').forEach(c=>c.checked=false);
+      saveProgress();
+    }
+
+    // Save on change
+    document.addEventListener('change', (e)=>{
+      if(e.target.matches('#planTable input[type="checkbox"]').toString()){
+        saveProgress();
+      }
+    });
+
+    // Controls
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+    document.getElementById('clearBtn').addEventListener('click', ()=> clearProgress());
+
+    // Compact rows toggle
+    const compactToggle = document.getElementById('compactToggle');
+    compactToggle.addEventListener('change', ()=>{
+      document.body.classList.toggle('compact', compactToggle.checked);
+    });
+
+    // Compact mode CSS injected
+    const style = document.createElement('style');
+    style.textContent = `
+      body.compact th, body.compact td { padding: 8px 10px; }
+      body.compact .checkgroup { gap:6px }
+      body.compact .checkgroup label { padding:4px 8px; }
+    `;
+    document.head.appendChild(style);
+
+    // Init
+    loadProgress();
+  </script>
+</body>
+</html>
